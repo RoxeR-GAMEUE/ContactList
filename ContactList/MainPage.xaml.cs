@@ -29,5 +29,10 @@ namespace ContactList
             View.Add(new ViewModel("Carlos", "Texto prueba"));
             View.Add(new ViewModel("Jorge", "Texto"));
         }
+
+        private void ClickToPageContacts(object sender, EventArgs e)
+        {
+            Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new ContactsPage()) );
+        }
     }
 }

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="#e5e5e5"
+             x:Class="ContactList.ContactsPage">
+    <NavigationPage.TitleView>
+        <StackLayout Spacing="0">
+            <Label FontSize="18" Text="All contacts" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start"/>
+            <Label FontSize="14" Text="{Binding SubTitle}"  TextColor="WhiteSmoke" HorizontalOptions="Start"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <CollectionView x:Name="collectView" ItemsSource="{Binding View}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="62"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame CornerRadius="50" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#1A1A1A"/>
+                        <Label Text="{Binding Icon}" FontSize="20" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontFamily="Arial"/>
+                        <StackLayout Spacing="0" Grid.Column="1" VerticalOptions="Center" Margin="-5,0">
+                            <Label Text="{Binding Top}" FontSize="16" HorizontalOptions="Start" FontAttributes="Bold" TextColor="#1A1A1A" />
+                            <Label Text="{Binding Bot}" FontSize="14" HorizontalOptions="Start" />
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

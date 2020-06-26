@@ -12,3 +12,4 @@ C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0
 C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactList.dll
 C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ref\ContactList.dll
 C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactList.pdb
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactsPage.xaml.g.cs

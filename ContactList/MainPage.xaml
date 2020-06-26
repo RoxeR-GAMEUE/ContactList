@@ -12,6 +12,9 @@
             <Label FontSize="14" Text="Favorite List"  TextColor="WhiteSmoke" HorizontalOptions="Start"/>
         </StackLayout>
     </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="List Contacts" Order="Secondary" Priority="0" Clicked="ClickToPageContacts"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <CollectionView x:Name="collectView" ItemsSource="{Binding View}">
             <CollectionView.ItemTemplate>

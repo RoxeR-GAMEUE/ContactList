@@ -12,5 +12,6 @@ namespace ContactList.Models
             Top = top;
             Bot = bot;
         }
+        public ViewModel() { }
     }
 }
