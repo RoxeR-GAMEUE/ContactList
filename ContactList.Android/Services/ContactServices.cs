@@ -85,10 +85,11 @@ namespace ContactList.Droid.Services
                         contact.Id = cursor.GetString(cursor.GetColumnIndex(projection[0]));
                         contact.Name = cursor.GetString(cursor.GetColumnIndex(projection[1]));
                         var number = cursor.GetString(cursor.GetColumnIndex(projection[2]));
-                        //number.Replace(" ", "").Replace("(", "").Replace(")","");
-                        //number = Regex.Replace(number, @".{1,}(?=\d{10}$)", string.Empty);
+                        number = number.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", "");
+                        number = Regex.Replace(number, @".{1,}(?=\d{10}$)", string.Empty);
                         contact.PhoneNumber = number;
-                        OnContactLoaded?.Invoke(this, new ContactEventArgs(contact));
+                        if (number.Length == 10)
+                            OnContactLoaded?.Invoke(this, new ContactEventArgs(contact));
                         if (stopLoad)
                             break;
                     } while (cursor.MoveToNext());

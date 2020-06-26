@@ -1,7 +1,9 @@
 ﻿using ContactList.Models;
+using ContactList.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +35,31 @@ namespace ContactList
             SubTitle = FilteredView.Count + " contacts";
             labelSubTitle.Text = SubTitle;
         }
+        private void OnContactLoaded(object sender, ContactEventArgs e)
+        {
+            View.Add(e.Contacto);
+            //SubTitle = View.Count + " contacts";
+            //labelSubTitle.Text = SubTitle;
+        }
+        async Task LoadContacts()
+        {
+            var watch = Stopwatch.StartNew();
+            IContactServices contactServices = (Application.Current as App).contactServices;
+            contactServices.OnContactLoaded += OnContactLoaded;
 
+            try { await contactServices.ContactsAsync(); }
+            catch (TaskCanceledException) { Console.WriteLine("Task was cancelled"); }
+
+            contactServices.OnContactLoaded -= OnContactLoaded;
+            watch.Stop();
+            var elapsedMs = watch.Elapsed.TotalSeconds;
+            Debug.WriteLine("Tiempo al leer los contactos: " + elapsedMs + " seg");
+        }
+        private void ClickReloadContacts(object sender, EventArgs e)
+        {
+            View.Clear();
+            Device.BeginInvokeOnMainThread(async () => await LoadContacts() );
+        }
         private async void ClickSwipeSearch(object sender, EventArgs e)
         {
             List<Task> tasks = new List<Task>();

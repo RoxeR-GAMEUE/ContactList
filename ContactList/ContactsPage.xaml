@@ -13,7 +13,8 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="Buscar_16.png" Order="Primary" Priority="1" Clicked="ClickSwipeSearch"/>
+        <ToolbarItem IconImageSource="Buscar_16.png" Order="Primary" Priority="0" Clicked="ClickSwipeSearch"/>
+        <ToolbarItem Text="Reaload Contacts" Order="Secondary" Priority="0" Clicked="ClickReloadContacts"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
