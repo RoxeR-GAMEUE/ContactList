@@ -12,7 +12,7 @@ namespace ContactList
     {
         public IContactServices contactServices { get; set; }
         public ObservableCollection<Contact> allContacts { get; set; }
-        public App(IContactServices contactServices)
+        public App(IContactServices contactServices = null)
         {
             this.contactServices = contactServices;
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace ContactList
                 {
                     permisosRead = await Permissions.RequestAsync<Permissions.ContactsRead>();
                 }
-                if (permisosRead == PermissionStatus.Granted)
+                if (permisosRead == PermissionStatus.Granted && contactServices != null)
                 {
                     Device.BeginInvokeOnMainThread(async () =>
                     {

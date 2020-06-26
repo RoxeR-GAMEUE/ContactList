@@ -9,30 +9,40 @@
     <NavigationPage.TitleView>
         <StackLayout Spacing="0">
             <Label FontSize="18" Text="All contacts" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start"/>
-            <Label FontSize="14" Text="{Binding SubTitle}"  TextColor="WhiteSmoke" HorizontalOptions="Start"/>
+            <Label FontSize="14" Text="{Binding SubTitle}" TextColor="WhiteSmoke" HorizontalOptions="Start" x:Name="labelSubTitle"/>
         </StackLayout>
     </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Buscar_16.png" Order="Primary" Priority="1" Clicked="ClickSwipeSearch"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <CollectionView x:Name="collectView" ItemsSource="{Binding View}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="62"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="70"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Frame CornerRadius="50" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#1A1A1A"/>
-                        <Label Text="{Binding Icon}" FontSize="20" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontFamily="Arial"/>
-                        <StackLayout Spacing="0" Grid.Column="1" VerticalOptions="Center" Margin="-5,0">
-                            <Label Text="{Binding Top}" FontSize="16" HorizontalOptions="Start" FontAttributes="Bold" TextColor="#1A1A1A" />
-                            <Label Text="{Binding Bot}" FontSize="14" HorizontalOptions="Start" />
-                        </StackLayout>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <SearchBar x:Name="searchBar" TextChanged="FilterSearch" TranslationY="-50" BackgroundColor="White" Text="{Binding SearchText}"/>
+            <CollectionView x:Name="collectView" ItemsSource="{Binding View}" Grid.RowSpan="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="62"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame CornerRadius="50" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#1A1A1A"/>
+                            <Label Text="{Binding Icon}" FontSize="20" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontFamily="Arial"/>
+                            <StackLayout Spacing="0" Grid.Column="1" VerticalOptions="Center" Margin="-5,0">
+                                <Label Text="{Binding Top}" FontSize="16" HorizontalOptions="Start" FontAttributes="Bold" TextColor="#1A1A1A" />
+                                <Label Text="{Binding Bot}" FontSize="14" HorizontalOptions="Start" />
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
