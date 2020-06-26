@@ -1,0 +1,14 @@
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\bin\Debug\netstandard2.0\ContactList.deps.json
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\bin\Debug\netstandard2.0\ContactList.dll
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\bin\Debug\netstandard2.0\ref\ContactList.dll
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\bin\Debug\netstandard2.0\ContactList.pdb
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactList.csprojAssemblyReference.cache
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactList.AssemblyInfoInputs.cache
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactList.AssemblyInfo.cs
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactList.csproj.CoreCompileInputs.cache
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactList.dll
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ref\ContactList.dll
+C:\Users\chiva\Documents\GitHub\ContactList\ContactList\obj\Debug\netstandard2.0\ContactList.pdb

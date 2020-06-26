@@ -10,7 +10,7 @@ namespace ContactList
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage()) { BarBackgroundColor = Color.FromHex("#1A1A1A") };
         }
 
         protected override void OnStart()
